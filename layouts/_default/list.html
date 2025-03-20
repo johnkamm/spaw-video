@@ -1,0 +1,24 @@
+{{ define "main" }}
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <a href="/">Southpaw Strategies</a>
+    </div>
+    <div class="nav-links">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/team/" class="nav-link {{ if eq .RelPermalink "/team/" }}active{{ end }}">Team</a>
+      <a href="/articles/" class="nav-link {{ if eq .RelPermalink "/articles/" }}active{{ end }}">Articles</a>
+      <a href="/contact/" class="nav-link {{ if eq .RelPermalink "/contact/" }}active{{ end }}">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-content">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    <div class="content">
+      {{ .Content }}
+    </div>
+  </div>
+</div>
+{{ end }}

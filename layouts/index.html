@@ -1,0 +1,27 @@
+{{ define "main" }}
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <a href="/">Southpaw Strategies</a>
+    </div>
+    <div class="nav-links">
+      <a href="/" class="nav-link active">Home</a>
+      <a href="/team" class="nav-link">Team</a>
+      <a href="/articles" class="nav-link">Articles</a>
+      <a href="/contact" class="nav-link">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero-section">
+  <div class="video-container">
+    <video autoplay muted loop playsinline>
+      <source src="{{ "images/dronevid1.mp4" | relURL }}" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-content">
+    <h1>{{ .Title }}</h1>
+    <div class="description">{{ .Content }}</div>
+  </div>
+</div>
+{{ end }}
