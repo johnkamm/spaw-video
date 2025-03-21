@@ -15,10 +15,10 @@ html, body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    background-color: rgba(0, 0, 0, 0.15); /* Semi-transparent black */
     z-index: 10; /* Make sure this is higher than hero-section but lower than hero-content */
     padding: 15px 0;
-    backdrop-filter: blur(5px); /* Optional: adds a slight blur effect */
+    backdrop-filter: blur(0px); /* Optional: adds a slight blur effect */
   }
   
   .nav-container {

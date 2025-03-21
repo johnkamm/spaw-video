@@ -18,6 +18,7 @@ html, body {
     background-color: rgba(0, 0, 0, 0.15); /* Semi-transparent black */
     z-index: 10; /* Make sure this is higher than hero-section but lower than hero-content */
     padding: 15px 0;
+    backdrop-filter: blur(0px); /* Optional: adds a slight blur effect */
   }
   
   .nav-container {
