@@ -1,12 +1,26 @@
-{{ define "main" }}
-<!-- Hamburger Menu -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="generator" content="Hugo 0.142.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Southpaw Strategies Consulting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    
+
 <div class="hamburger-menu">
   <div class="hamburger-line"></div>
   <div class="hamburger-line"></div>
   <div class="hamburger-line"></div>
 </div>
 
-<!-- Navigation Menu -->
+
 <div class="nav-menu">
   <a href="/" class="nav-link active">Home</a>
   <a href="/team" class="nav-link">Team</a>
@@ -14,10 +28,10 @@
   <a href="/contact" class="nav-link">Contact</a>
 </div>
 
-<!-- Menu Overlay -->
+
 <div class="menu-overlay"></div>
 
-<!-- Contact Form Popup -->
+
 <div class="contact-popup">
   <div class="contact-popup-content">
     <div class="contact-popup-header">
@@ -46,16 +60,16 @@
   </div>
 </div>
 
-<!-- Contact Form Popup Overlay -->
+
 <div class="contact-popup-overlay"></div>
 
 <div class="hero-section">
   <div class="video-container">
     <video autoplay muted loop playsinline>
-      <source src="{{ "images/dronevid1.mp4" | relURL }}" type="video/mp4">
+      <source src="/images/dronevid1.mp4" type="video/mp4">
     </video>
     
-    <!-- Scroll Down Arrow -->
+    
     <div class="scroll-arrow">
       <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="12" cy="12" r="10" fill="rgba(0,0,0,0.3)"></circle>
@@ -65,12 +79,13 @@
     </div>
   </div>
   <div class="hero-content">
-    <h1>{{ .Title }}</h1>
-    <div class="description">{{ .Content }}</div>
+    <h1>Southpaw Strategies Consulting</h1>
+    <div class="description"><p>Cultivating efficiency that competitors can&rsquo;t match</p>
+</div>
   </div>
 </div>
 
-<!-- Featured Services Section -->
+
 <div class="featured-services">
   <div class="service-item">
     <div class="service-icon">
@@ -112,4 +127,10 @@
   </ul>
   </div>
 </div>
-{{ end }}
+
+    <script src="/js/video-resize.js"></script>
+    <script src="/js/hamburger-menu.js"></script>
+    <script src="/js/contact-popup.js"></script>
+    <script src="/js/scroll-arrow.js"></script>
+</body>
+</html>

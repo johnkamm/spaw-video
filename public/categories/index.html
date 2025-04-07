@@ -1,24 +1,36 @@
-{{ define "main" }}
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Categories</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    
 
-<!-- Hamburger Menu -->
+
 <div class="hamburger-menu">
   <div class="hamburger-line"></div>
   <div class="hamburger-line"></div>
   <div class="hamburger-line"></div>
 </div>
 
-<!-- Navigation Menu -->
+
 <div class="nav-menu">
   <a href="/" class="nav-link">Home</a>
-  <a href="/team/" class="nav-link {{ if eq .RelPermalink "/team/" }}active{{ end }}">Team</a>
-  <a href="/articles/" class="nav-link {{ if eq .RelPermalink "/articles/" }}active{{ end }}">Articles</a>
-  <a href="/contact/" class="nav-link {{ if eq .RelPermalink "/contact/" }}active{{ end }}">Contact</a>
+  <a href="/team/" class="nav-link ">Team</a>
+  <a href="/articles/" class="nav-link ">Articles</a>
+  <a href="/contact/" class="nav-link ">Contact</a>
 </div>
 
-<!-- Menu Overlay -->
+
 <div class="menu-overlay"></div>
 
-<!-- Contact Form Popup -->
+
 <div class="contact-popup">
   <div class="contact-popup-content">
     <div class="contact-popup-header">
@@ -47,15 +59,21 @@
   </div>
 </div>
 
-<!-- Contact Form Popup Overlay -->
+
 <div class="contact-popup-overlay"></div>
 
 <div class="page-content">
   <div class="container">
-    <h1>{{ .Title }}</h1>
+    <h1>Categories</h1>
     <div class="content">
-      {{ .Content }}
+      
     </div>
   </div>
 </div>
-{{ end }}
+
+    <script src="/js/video-resize.js"></script>
+    <script src="/js/hamburger-menu.js"></script>
+    <script src="/js/contact-popup.js"></script>
+    <script src="/js/scroll-arrow.js"></script>
+</body>
+</html>

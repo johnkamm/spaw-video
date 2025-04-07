@@ -18,9 +18,13 @@ document.addEventListener('DOMContentLoaded', function() {
     videoContainer.style.width = '100%';
     videoContainer.style.height = '100%';
     
-    // Force body and html to not scroll
-    document.body.style.overflow = 'hidden';
-    document.documentElement.style.overflow = 'hidden';
+    // Allow scrolling for content below hero
+    document.body.style.overflowY = 'auto';
+    document.documentElement.style.overflowY = 'auto';
+    
+    // Only prevent horizontal scrolling
+    document.body.style.overflowX = 'hidden';
+    document.documentElement.style.overflowX = 'hidden';
   }
   
   // Call immediately
