@@ -185,7 +185,7 @@ html, body {
 }
 
 .contact-popup-content {
-  padding: 30px;
+  padding: 30px 60px 30px 30px; /* Top Right Bottom Left */
   color: #333;
 }
 
@@ -205,13 +205,16 @@ html, body {
   font-weight: 600;
 }
 
+/* Optionally add more breathing room to the close button */
 .close-popup {
   background: none;
   border: none;
-  font-size: 28px;
+  font-size: 40px;
   cursor: pointer;
   color: #777;
   transition: color 0.3s ease;
+  margin-right: -50px; /* Move the close button slightly more to the right */
+  margin-top: -40px;
 }
 
 .close-popup:hover {
@@ -238,6 +241,7 @@ html, body {
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
   transition: border-color 0.3s ease;
+  padding-right: 15px; /* Add extra padding on the right side of inputs */
   }
 
 .form-group input:focus,
@@ -293,7 +297,7 @@ html, body {
 
 .service-item {
   flex: 1;
-  padding: 40px 30px;
+  padding: 140px 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -302,15 +306,15 @@ html, body {
 }
 
 .service-item:nth-child(1) {
-  background-color: rgba(92, 84, 112, 0.9);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .service-item:nth-child(2) {
-  background-color: rgba(72, 68, 92, 0.9);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .service-item:nth-child(3) {
-  background-color: rgba(92, 84, 112, 0.9);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .service-icon {
