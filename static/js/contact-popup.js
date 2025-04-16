@@ -1,41 +1,43 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Get elements
-    const contactLink = document.querySelector('.nav-menu a[href="/contact"]');
-    const contactPopup = document.querySelector('.contact-popup');
-    const contactOverlay = document.querySelector('.contact-popup-overlay');
-    const closeButton = document.querySelector('.close-popup');
-    const contactForm = document.getElementById('contact-form');
-    
-    // Prevent default navigation for contact link
-    contactLink.addEventListener('click', function(e) {
-      e.preventDefault();
-      
-      // Open popup
-      contactPopup.style.display = 'block';
-      contactOverlay.style.display = 'block';
-      
-      // Add animation classes
-      contactPopup.classList.add('fade-in');
-      contactOverlay.classList.add('fade-in');
-      
-      // Close the hamburger menu if it's open
-      const hamburgerMenu = document.querySelector('.hamburger-menu');
-      const navMenu = document.querySelector('.nav-menu');
-      const menuOverlay = document.querySelector('.menu-overlay');
-      
-      hamburgerMenu.classList.remove('open');
-      navMenu.classList.remove('open');
-      menuOverlay.classList.remove('open');
-    });
-    
-    // Close popup when clicking the close button
-    closeButton.addEventListener('click', closeContactPopup);
-    
-    // Close popup when clicking outside
-    contactOverlay.addEventListener('click', closeContactPopup);
-    
-    // Handle form submission
-    contactForm.addEventListener('submit', function(e) {
+  // Get elements
+  const contactLinks = document.querySelectorAll('.nav-menu a[href="/contact"], .footer-link[href="/contact"]');
+  const contactPopup = document.querySelector('.contact-popup');
+  const contactOverlay = document.querySelector('.contact-popup-overlay');
+  const closeButton = document.querySelector('.close-popup');
+  const contactForm = document.getElementById('contact-form');
+  
+  // Add event listeners to all contact links
+  contactLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          // Open popup
+          contactPopup.style.display = 'block';
+          contactOverlay.style.display = 'block';
+          
+          // Add animation classes
+          contactPopup.classList.add('fade-in');
+          contactOverlay.classList.add('fade-in');
+          
+          // Close the hamburger menu if it's open
+          const hamburgerMenu = document.querySelector('.hamburger-menu');
+          const navMenu = document.querySelector('.nav-menu');
+          const menuOverlay = document.querySelector('.menu-overlay');
+          
+          hamburgerMenu.classList.remove('open');
+          navMenu.classList.remove('open');
+          menuOverlay.classList.remove('open');
+      });
+  });
+  
+  // Close popup when clicking the close button
+  closeButton.addEventListener('click', closeContactPopup);
+  
+  // Close popup when clicking outside
+  contactOverlay.addEventListener('click', closeContactPopup);
+  
+  // Handle form submission
+  contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
       
       // You would typically handle the form submission with AJAX here
@@ -57,9 +59,9 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Close the popup
       closeContactPopup();
-    });
-    
-    function closeContactPopup() {
+  });
+  
+  function closeContactPopup() {
       // Add fade-out animation
       contactPopup.classList.remove('fade-in');
       contactOverlay.classList.remove('fade-in');
@@ -68,10 +70,10 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Hide elements after animation completes
       setTimeout(function() {
-        contactPopup.style.display = 'none';
-        contactOverlay.style.display = 'none';
-        contactPopup.classList.remove('fade-out');
-        contactOverlay.classList.remove('fade-out');
+          contactPopup.style.display = 'none';
+          contactOverlay.style.display = 'none';
+          contactPopup.classList.remove('fade-out');
+          contactOverlay.classList.remove('fade-out');
       }, 300);
-    }
-  });
+  }
+});
