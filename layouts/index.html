@@ -9,7 +9,7 @@
 <!-- Navigation Menu -->
 <div class="nav-menu">
   <a href="/" class="nav-link active">Home</a>
-  <a href="#team-section" class="nav-link">Team</a>
+  <a href="#featured-services" class="nav-link">Services</a>
   <a href="/articles" class="nav-link">Articles</a>
   <a href="/contact" class="nav-link">Contact</a>
 </div>
@@ -71,7 +71,7 @@
 </div>
 
 <!-- Featured Services Section -->
-<div class="featured-services">
+<div id="featured-services" class="featured-services">
   <div class="service-item">
     <div class="service-icon">
       <i class="fas fa-hand-holding-usd" style="font-size:50px;"></i>
@@ -113,51 +113,48 @@
   </div>
 </div>
 
-<!-- Team Section -->
-  
-  <div class="team-container">
-    <!-- Team Member 1 -->
-    <div class="team-member">
-      <div class="member-image">
-        <img src="{{ "images/team-member-1.jpg" | relURL }}" alt="Team Member Name">
+<!-- Updated Footer with Team Members, LinkedIn Icons and Nav Split -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <!-- Team Members on Left -->
+    <div class="footer-team">
+      <div class="footer-team-member">
+        <img src="{{ "images/team-member-1.jpg" | relURL }}" alt="Kyle Holland">
+        <div class="member-info">
+          <p class="member-name">Kyle Holland</p>
+          <p class="member-title">Title Placeholder #1</p>
+        </div>
+        <a href="https://www.linkedin.com/in/kyle-holland-83a66510/" target="_blank" rel="noopener noreferrer" class="linkedin-icon" aria-label="Kyle Holland LinkedIn Profile">
+          <i class="fab fa-linkedin"></i>
+        </a>
       </div>
-      <h3 class="member-name">Kyle Holland</h3>
-      <p class="member-title">Title Placeholder #1</p>
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/kyle-holland-83a66510/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+      <div class="footer-team-member">
+        <img src="{{ "images/team-member-2.jpg" | relURL }}" alt="John Kamm">
+        <div class="member-info">
+          <p class="member-name">John Kamm</p>
+          <p class="member-title">Title Placeholder #2</p>
+        </div>
+        <a href="https://www.linkedin.com/in/john-kamm-8a06082a5/" target="_blank" rel="noopener noreferrer" class="linkedin-icon" aria-label="John Kamm LinkedIn Profile">
           <i class="fab fa-linkedin"></i>
         </a>
       </div>
     </div>
     
-    <!-- Team Member 2 -->
-    <div class="team-member">
-      <div class="member-image">
-        <img src="{{ "images/team-member-2.jpg" | relURL }}" alt="Team Member Name">
-      </div>
-      <h3 class="member-name">John Kamm</h3>
-      <p class="member-title">Title Placeholder #2</p>
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/john-kamm-8a06082a5/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
-          <i class="fab fa-linkedin"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Footer -->
-<footer class="site-footer">
-  <div class="footer-content">
+    <!-- Vertical Divider -->
+    <div class="footer-divider"></div>
+    
+    <!-- Navigation on Right -->
     <div class="footer-nav">
       <a href="/" class="footer-link">Home</a>
-      <a href="#team-section" class="footer-link">Team</a>
+      <a href="#featured-services" class="footer-link">Services</a>
       <a href="/articles" class="footer-link">Articles</a>
       <a href="/contact" class="footer-link">Contact</a>
     </div>
-    <div class="footer-copyright">
-      <p>&copy; 2025 Website created by Southpaw Strategies</p>
-    </div>
+  </div>
+  
+  <!-- Copyright stays at bottom -->
+  <div class="footer-copyright">
+    <p>&copy; 2025 Website created by Southpaw Strategies</p>
   </div>
 </footer>
 {{ end }}

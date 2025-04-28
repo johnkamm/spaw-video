@@ -17,13 +17,25 @@ document.addEventListener('DOMContentLoaded', function() {
         menuOverlay.classList.remove('open');
     });
     
-    // Close menu when link is clicked
+    // Handle navigation links
     const navLinks = document.querySelectorAll('.nav-menu a');
     navLinks.forEach(link => {
-        link.addEventListener('click', function() {
+        link.addEventListener('click', function(e) {
+            // Close the menu
             hamburgerMenu.classList.remove('open');
             navMenu.classList.remove('open');
             menuOverlay.classList.remove('open');
+            
+            // Handle jump links (links starting with #)
+            if (this.getAttribute('href').startsWith('#')) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
         });
     });
 });
