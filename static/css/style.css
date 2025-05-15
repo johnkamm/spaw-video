@@ -9,6 +9,30 @@ html, body {
   font-family: 'Poppins', sans-serif;
 }
 
+/* Logo Styles */
+.logo-container {
+  position: fixed;
+  top: 27px; /* Matching hamburger menu vertical position */
+  left: 50px; /* Same distance from left as hamburger is from right */
+  width: 156px; /* Matching hamburger menu width */
+  height: 156px; /* Making it square to match hamburger menu area */
+  z-index: 100; /* Same z-index as hamburger menu */
+}
+
+.site-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%; /* Makes it circular */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow to match hamburger lines */
+  transition: opacity 0.3s ease, box-shadow 0.3s ease;
+}
+
+.site-logo:hover {
+  opacity: 0.9;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+
 /* Hamburger Menu Styles */
 .hamburger-menu {
   position: fixed;
@@ -284,6 +308,100 @@ html, body {
 @keyframes fadeOut {
   from { opacity: 1; }
   to { opacity: 0; }
+}
+
+/* Cyrus Section */
+.cyrus-section {
+  width: 100%;
+  background-color: #000;
+  padding: 60px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cyrus-content {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.cyrus-image {
+  max-width: 100%;
+  border-radius: 15px; /* Rounded corners */
+  height: auto;
+  display: block;
+  margin-bottom: 40px;
+}
+
+.cyrus-text {
+  color: white;
+  text-align: center;
+  max-width: 1000px;
+}
+
+.cyrus-text h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  line-height: 1.4;
+}
+
+.cyrus-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  font-weight: 400;
+}
+
+.cyrus-highlight {
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.cyrus-tagline {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Responsive styles for Cyrus section */
+@media (max-width: 768px) {
+  .cyrus-section {
+    padding: 40px 0;
+  }
+  
+  .cyrus-content {
+    padding: 0 20px;
+  }
+  
+  .cyrus-image {
+    margin-bottom: 30px;
+  }
+  
+  .cyrus-text h2 {
+    font-size: 1.8rem;
+  }
+  
+  .cyrus-text p {
+    font-size: 1.1rem;
+  }
+  
+  .cyrus-highlight {
+    font-size: 1.2rem;
+  }
+  
+  .cyrus-tagline {
+    font-size: 1.1rem;
+  }
 }
 
 /* Featured Services Section */
@@ -609,28 +727,19 @@ html, body {
   align-items: center;
 }
 
-/* Team members section */
+/* Team members section - horizontal row on LEFT side */
 .footer-team {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  gap: 25px;
   width: 100%;
+  align-items: center;
+  margin-left: -250px; /* Push the entire team group left to center the divider */
 }
 
 .footer-team-member {
   display: flex;
   align-items: center;
-}
-
-/* First team member - position farther left */
-.footer-team-member:first-child {
-  justify-self: start;
-  margin-left: -120px; /* Negative margin to counteract padding */
-}
-
-/* Second team member - position farther right */
-.footer-team-member:last-child {
-  justify-self: end;
-  margin-right: 80px; /* Negative margin to counteract padding */
+  flex-shrink: 0;
 }
 
 .footer-team-member img {
@@ -644,27 +753,30 @@ html, body {
 .footer-team-member .member-info {
   display: flex;
   flex-direction: column;
-  margin-right: 8px;
 }
 
 .footer-team-member .member-name {
   font-size: 1.1rem;
   font-weight: 600;
   margin: 0;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 6px; /* Smaller gap between name and LinkedIn icon */
 }
 
 .footer-team-member .member-title {
   font-size: 0.9rem;
   color: #ccc;
   margin: 0;
-  white-space: nowrap; /* Add this line to prevent wrapping */
+  white-space: nowrap;
 }
 
 .footer-team-member .linkedin-icon {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #0077b5;
   transition: color 0.3s ease;
 }
@@ -681,13 +793,14 @@ html, body {
   justify-self: center;
 }
 
-/* Navigation section */
+/* Navigation section - RIGHT side of grid */
 .footer-nav {
   display: flex;
-  gap: 25px;
-  flex-wrap: wrap;
+  gap: 40px; /* Reduced gap */
+  flex-wrap: nowrap; /* Prevent wrapping */
   justify-content: flex-end;
-  margin-right: 80px; /* Push nav items closer to the divider */
+  align-items: center;
+  margin-right: 120px; /* Remove right margin */
 }
 
 .footer-link {
@@ -695,8 +808,9 @@ html, body {
   text-decoration: none;
   font-size: 1.1rem;
   transition: color 0.3s ease;
-  padding: 5px 12px; /* Add horizontal padding (previously 5px 0) */
+  padding: 5px 8px; /* Reduced horizontal padding */
   position: relative;
+  white-space: nowrap; /* Prevent text wrapping */
 }
 
 .footer-link:after {
@@ -719,7 +833,7 @@ html, body {
 }
 
 .footer-copyright {
-  grid-column: 1 / -1; /* Span all columns */
+  grid-column: 1 / -1;
   color: #999;
   text-align: center;
   font-size: 0.9rem;
@@ -736,14 +850,10 @@ html, body {
   }
   
   .footer-team {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 20px;
-  }
-  
-  .footer-team-member:first-child,
-  .footer-team-member:last-child {
-    justify-self: center;
-    margin: 0;
+    align-items: center;
+    margin-left: 0; /* Reset margin on mobile */
   }
   
   .footer-divider {
@@ -754,5 +864,6 @@ html, body {
   
   .footer-nav {
     justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping on mobile */
   }
 }
