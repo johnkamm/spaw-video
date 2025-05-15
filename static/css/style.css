@@ -400,7 +400,7 @@ html, body {
   }
   
   .cyrus-tagline {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -733,7 +733,7 @@ html, body {
   gap: 25px;
   width: 100%;
   align-items: center;
-  margin-left: -250px; /* Push the entire team group left to center the divider */
+  margin-left: -220px; /* Push the entire team group left to center the divider */
 }
 
 .footer-team-member {
