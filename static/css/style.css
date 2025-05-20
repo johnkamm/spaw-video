@@ -310,97 +310,123 @@ html, body {
   to { opacity: 0; }
 }
 
-/* Cyrus Section */
+/* Cyrus Section with New Styling */
 .cyrus-section {
   width: 100%;
   background-color: #000;
-  padding: 60px 0;
+  padding: 60px 40px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.cyrus-content {
+.cyrus-container {
   max-width: 1200px;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0 40px;
+  background-color: #1c3d5a; /* Different blue shade than service boxes */
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+/* Use float for proper text wrapping */
+.cyrus-image-container {
+  float: left;
+  width: 40%;
+  margin-right: 40px;
+  margin-bottom: 30px;
 }
 
 .cyrus-image {
-  max-width: 100%;
-  border-radius: 15px; /* Rounded corners */
+  width: 100%;
   height: auto;
+  border-radius: 15px;
+  border: 3px solid #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
   display: block;
-  margin-bottom: 40px;
 }
 
 .cyrus-text {
   color: white;
-  text-align: center;
-  max-width: 1000px;
 }
 
 .cyrus-text h2 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 600;
-  margin-bottom: 30px;
+  margin-top: 0;
+  margin-bottom: 25px;
   line-height: 1.4;
 }
 
 .cyrus-text p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.6;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   font-weight: 400;
 }
 
+/* Clear the float to ensure container expands properly */
+.cyrus-content::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .cyrus-highlight {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 600;
   font-style: italic;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
 .cyrus-tagline {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 0;
   text-transform: uppercase;
   letter-spacing: 1px;
+  text-align: center;
 }
 
 /* Responsive styles for Cyrus section */
+@media (max-width: 992px) {
+  .cyrus-image-container {
+    float: none;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 30px;
+  }
+  
+  .cyrus-text {
+    text-align: center;
+  }
+}
+
 @media (max-width: 768px) {
   .cyrus-section {
-    padding: 40px 0;
+    padding: 40px 20px;
   }
   
-  .cyrus-content {
-    padding: 0 20px;
-  }
-  
-  .cyrus-image {
-    margin-bottom: 30px;
+  .cyrus-container {
+    padding: 30px 20px;
   }
   
   .cyrus-text h2 {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
   
   .cyrus-text p {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   
   .cyrus-highlight {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   
   .cyrus-tagline {
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
 }
 
