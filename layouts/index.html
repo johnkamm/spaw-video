@@ -13,10 +13,10 @@
 
 <!-- Navigation Menu -->
 <div class="nav-menu">
-  <a href="{{ "/" | relURL }}" class="nav-link active">Home</a>
-  <a href="{{ "/" | relURL }}#featured-services" class="nav-link">Services</a>
+  <a href="{{ .Site.BaseURL }}" class="nav-link">Home</a>
+  <a href="{{ .Site.BaseURL }}#featured-services" class="nav-link">Services</a>
   <a href="{{ .Site.BaseURL }}position/" class="nav-link">Position Paper</a>
-  <a href="{{ "/contact" | relURL }}" class="nav-link">Contact</a>
+  <a href="{{ .Site.BaseURL }}contact/" class="nav-link">Contact</a>
 </div>
 
 <!-- Menu Overlay -->
@@ -189,12 +189,12 @@
     <!-- Vertical Divider -->
     <div class="footer-divider"></div>
     
-<!-- Navigation on Right -->
+<!-- Footer Navigation -->
 <div class="footer-nav">
-  <a href="{{ "/" | relURL }}" class="footer-link">Home</a>
-  <a href="{{ "/#featured-services" | relURL }}" class="footer-link">Services</a>
-  <a href="{{ .Site.BaseURL }}position/" class="nav-link">Position Paper</a>
-  <a href="{{ "/contact" | relURL }}" class="footer-link">Contact</a>
+  <a href="{{ .Site.BaseURL }}" class="footer-link">Home</a>
+  <a href="{{ .Site.BaseURL }}#featured-services" class="footer-link">Services</a>
+  <a href="{{ .Site.BaseURL }}position/" class="footer-link">Position Paper</a>
+  <a href="{{ .Site.BaseURL }}contact/" class="footer-link">Contact</a>
 </div>
   
   <!-- Copyright stays at bottom -->
