@@ -893,3 +893,114 @@ html, body {
     flex-wrap: wrap; /* Allow wrapping on mobile */
   }
 }
+
+/* Position Paper Page Styles */
+.page-content {
+  background-color: #000;
+  min-height: 100vh;
+  padding: 140px 40px 60px; /* Top padding to account for fixed logo/menu */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.container {
+  max-width: 1000px;
+  width: 100%;
+}
+
+.position-paper {
+  background-color: #1c3d5a; /* Same blue as Cyrus section */
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+.position-paper h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+  color: white;
+}
+
+.position-paper h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.position-paper h3 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.position-paper p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.position-paper ul,
+.position-paper ol {
+  margin-bottom: 20px;
+  padding-left: 30px;
+}
+
+.position-paper li {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.position-paper blockquote {
+  border-left: 4px solid #fff;
+  padding-left: 20px;
+  margin: 30px 0;
+  font-style: italic;
+  color: #ccc;
+}
+
+.position-paper strong {
+  color: white;
+}
+
+.position-paper em {
+  color: #ccc;
+}
+
+/* Responsive styles for position paper */
+@media (max-width: 768px) {
+  .page-content {
+    padding: 120px 20px 40px;
+  }
+  
+  .position-paper {
+    padding: 30px 25px;
+  }
+  
+  .position-paper h1 {
+    font-size: 2rem;
+  }
+  
+  .position-paper h2 {
+    font-size: 1.5rem;
+  }
+  
+  .position-paper h3 {
+    font-size: 1.2rem;
+  }
+  
+  .position-paper p,
+  .position-paper li {
+    font-size: 1rem;
+  }
+}

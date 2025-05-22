@@ -13,9 +13,9 @@
 
 <!-- Navigation Menu -->
 <div class="nav-menu">
-  <a href="/" class="nav-link active">Home</a>
-  <a href="#featured-services" class="nav-link">Services</a>
-  <a href="/position" class="nav-link">Position Paper</a>
+  <a href="/" class="nav-link">Home</a>
+  <a href="/#featured-services" class="nav-link">Services</a>
+  <a href="/position" class="nav-link {{ if eq .RelPermalink "/position/" }}active{{ end }}">Position Paper</a>
   <a href="/contact" class="nav-link">Contact</a>
 </div>
 
@@ -54,92 +54,15 @@
 <!-- Contact Form Popup Overlay -->
 <div class="contact-popup-overlay"></div>
 
-<div class="hero-section">
-  <div class="video-container">
-    <video autoplay muted loop playsinline>
-      <source src="{{ "images/dronevid1.mp4" | relURL }}" type="video/mp4">
-    </video>
-    
-    <!-- Scroll Down Arrow -->
-    <div class="scroll-arrow">
-      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="10" fill="rgba(0,0,0,0.3)"></circle>
-        <polyline points="8 12 12 16 16 12"></polyline>
-        <line x1="12" y1="8" x2="12" y2="16"></line>
-      </svg>
-    </div>
-  </div>
-  <div class="hero-content">
-    <h1>{{ .Title }}</h1>
-    <div class="description">{{ .Content }}</div>
-  </div>
-</div>
-
-<!-- Cyrus Section with Float-Based Layout -->
-<div class="cyrus-section">
-  <div class="cyrus-container">
-    <div class="cyrus-content">
-      <div class="cyrus-image-container">
-        <img src="{{ "images/cyrus.png" | relURL }}" alt="Cyrus McCormick Harvester" class="cyrus-image">
-      </div>
-      <div class="cyrus-text">
-        <h2>Cyrus McCormick revolutionized agriculture</h2>
-        <p>That's not controversial. He marketed a machine that harvested grain, a crop that was harvested in years prior . . . by hand. <i>By hand.</i></p>
-        
-        <p>As improved and specialized machines were applied to agriculture, production costs dropped, often by orders of magnitude. McCormick started a revolution, and now cash crops of every stripe are planted, tended and harvested by bespoke machines-- from berries to root vegetables to tree fruit.</p>
-        
-        <p>Is farming row-crop cannabis mechanized in the same way? It's not. Outdoor THC cannabis plantations largely rely on human labor for each step in that crop's cultivation. It's a predictably expensive process.</p>
-        
-        <p><i>We're the exception:</i> our team has engineered technology that halves the OpEx top line that rules the industry. We've changed how outdoor cannabis is cultivated by using mechanical advantages at every step of cultivation-- germination, planting, fertigation, trellising, harvesting.</p>
-        
-        <p class="cyrus-highlight">We get it done cheaper, we get it done faster.</p>
-        
-        <p class="cyrus-tagline">Fewer hands, more horsepower.</p>
+<!-- Main Content Area -->
+<div class="page-content">
+  <div class="container">
+    <div class="position-paper">
+      <h1>{{ .Title }}</h1>
+      <div class="content">
+        {{ .Content }}
       </div>
     </div>
-  </div>
-</div>
-
-<!-- Featured Services Section -->
-<div id="featured-services" class="featured-services">
-  <div class="service-item">
-    <div class="service-icon">
-      <i class="fas fa-hand-holding-usd" style="font-size:50px;"></i>
-    </div>
-    <h3>Lowest Operating Cost</h3>
-    <p><i>Reduce Labor Through Mechanization</i></p>
-    <ul>
-    <li>Planting, Trellising and Harvesting </li>
-    <li>Buildings designed to do Triple Duty </li>
-    <li>Advanced Soil Building and Feeding</li>
-  </ul>
-  </div>
-  
-  <div class="service-item">
-    <div class="service-icon">
-      <i class="fa-solid fa-people-group" style="font-size:50px;"></i>
-    </div>
-    <h3>A Team with Experience</h3>
-    <p><i>Plug and Play</i></p>
-    <ul>
-    <li>Principals with a proven record</li>
-    <li>First Outdoor "Class C" in Michigan</li>
-    <li>Strong Understanding of Agriculture</li>
-    <li>Strong Understanding of Business</li>
-  </ul>
-  </div>
-  
-  <div class="service-item">
-    <div class="service-icon">
-      <i class="fa-solid fa-chart-line" style="font-size:50px;"></i>
-    </div>
-    <h3>We Beat the Margins</h3>
-    <p><i>Let us demonstrate a path to 30% margins</i></p>
-    <ul>
-    <li>Fulfill Ingredient Demand</li>
-    <li>Preroll Production</li>
-    <li>Advanced Soil Building and Feeding</li>
-  </ul>
   </div>
 </div>
 
@@ -192,7 +115,7 @@
     <!-- Navigation on Right -->
     <div class="footer-nav">
       <a href="/" class="footer-link">Home</a>
-      <a href="#featured-services" class="footer-link">Services</a>
+      <a href="/#featured-services" class="footer-link">Services</a>
       <a href="/position" class="footer-link">Position Paper</a>
       <a href="/contact" class="footer-link">Contact</a>
     </div>
