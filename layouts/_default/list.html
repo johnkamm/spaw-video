@@ -1,4 +1,8 @@
 {{ define "main" }}
+<!-- Logo -->
+<div class="logo-container">
+  <img src="{{ "images/logo1.png" | relURL }}" alt="Southpaw Strategies" class="site-logo">
+</div>
 
 <!-- Hamburger Menu -->
 <div class="hamburger-menu">
@@ -10,9 +14,9 @@
 <!-- Navigation Menu -->
 <div class="nav-menu">
   <a href="/" class="nav-link">Home</a>
-  <a href="/#featured-services" class="nav-link {{ if eq .RelPermalink "/services/" }}active{{ end }}">Services</a>
-  <a href="/articles/" class="nav-link {{ if eq .RelPermalink "/articles/" }}active{{ end }}">Articles</a>
-  <a href="/contact/" class="nav-link {{ if eq .RelPermalink "/contact/" }}active{{ end }}">Contact</a>
+  <a href="/#featured-services" class="nav-link">Services</a>
+  <a href="/position" class="nav-link {{ if eq .Section "position" }}active{{ end }}">Position Paper</a>
+  <a href="/contact" class="nav-link">Contact</a>
 </div>
 
 <!-- Menu Overlay -->
@@ -22,7 +26,7 @@
 <div class="contact-popup">
   <div class="contact-popup-content">
     <div class="contact-popup-header">
-      <h2>Get In Touch</h2>
+      <h2>Contact Us</h2>
       <button class="close-popup">&times;</button>
     </div>
     <form id="contact-form">
@@ -50,55 +54,70 @@
 <!-- Contact Form Popup Overlay -->
 <div class="contact-popup-overlay"></div>
 
+<!-- Main Content Area -->
 <div class="page-content">
   <div class="container">
-    <h1>{{ .Title }}</h1>
-    <div class="content">
-      {{ .Content }}
+    <div class="position-paper">
+      <h1>{{ .Title }}</h1>
+      <div class="content">
+        {{ .Content }}
+      </div>
     </div>
   </div>
 </div>
 
-<!-- Updated Footer with Team Members and Nav Split -->
+<!-- Footer -->
 <footer class="site-footer">
   <div class="footer-content">
-    <!-- Team Members on Left -->
     <div class="footer-team">
       <div class="footer-team-member">
         <img src="{{ "images/team-member-1.jpg" | relURL }}" alt="Kyle Holland">
         <div class="member-info">
-          <p class="member-name">Kyle Holland</p>
+          <div class="member-name">
+            Kyle Holland
+            <a href="https://www.linkedin.com/in/kyle-holland-83a66510/" target="_blank" rel="noopener noreferrer" class="linkedin-icon" aria-label="Kyle Holland LinkedIn Profile">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
           <p class="member-title">Title Placeholder #1</p>
         </div>
-        <a href="https://www.linkedin.com/in/kyle-holland-83a66510/" target="_blank" rel="noopener noreferrer" class="linkedin-icon" aria-label="Kyle Holland LinkedIn Profile">
-          <i class="fab fa-linkedin"></i>
-        </a>
       </div>
       <div class="footer-team-member">
         <img src="{{ "images/team-member-2.jpg" | relURL }}" alt="John Kamm">
         <div class="member-info">
-          <p class="member-name">John Kamm</p>
+          <div class="member-name">
+            John Kamm
+            <a href="https://www.linkedin.com/in/john-kamm-8a06082a5/" target="_blank" rel="noopener noreferrer" class="linkedin-icon" aria-label="John Kamm LinkedIn Profile">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
           <p class="member-title">Title Placeholder #2</p>
         </div>
-        <a href="https://www.linkedin.com/in/john-kamm-8a06082a5/" target="_blank" rel="noopener noreferrer" class="linkedin-icon" aria-label="John Kamm LinkedIn Profile">
-          <i class="fab fa-linkedin"></i>
-        </a>
+      </div>
+      <div class="footer-team-member">
+        <img src="{{ "images/team-member-3.jpg" | relURL }}" alt="Kent Thomas">
+        <div class="member-info">
+          <div class="member-name">
+            Kent Thomas
+            <a href="https://www.linkedin.com/in/kentmthomas/" target="_blank" rel="noopener noreferrer" class="linkedin-icon" aria-label="Kent Thomas LinkedIn Profile">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
+          <p class="member-title">Title Placeholder #3</p>
+        </div>
       </div>
     </div>
     
-    <!-- Vertical Divider -->
     <div class="footer-divider"></div>
     
-    <!-- Navigation on Right -->
     <div class="footer-nav">
       <a href="/" class="footer-link">Home</a>
       <a href="/#featured-services" class="footer-link">Services</a>
-      <a href="/articles" class="footer-link">Articles</a>
+      <a href="/position" class="footer-link">Position Paper</a>
       <a href="/contact" class="footer-link">Contact</a>
     </div>
   </div>
   
-  <!-- Copyright stays at bottom -->
   <div class="footer-copyright">
     <p>&copy; 2025 Website created by Southpaw Strategies</p>
   </div>

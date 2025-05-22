@@ -2,8 +2,6 @@
 title: "From Shadows to Sustainability: Why Indoor Cannabis Cultivation Is a Prohibition-Era Relic Unfit for a Legal Market"
 date: 2025-01-21
 draft: false
-type: "position"
-layout: "single"
 ---
 
 ## Executive Summary
