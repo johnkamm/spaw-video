@@ -15,7 +15,7 @@
 <div class="nav-menu">
   <a href="{{ "/" | relURL }}" class="nav-link">Home</a>
   <a href="{{ "/" | relURL }}#featured-services" class="nav-link">Services</a>
-  <a href="{{ "/position" | relURL }}" class="nav-link {{ if eq .Section "position" }}active{{ end }}">Position Paper</a>
+  <a href="{{ .Site.BaseURL }}position/" class="nav-link">Position Paper</a>
   <a href="{{ "/contact" | relURL }}" class="nav-link">Contact</a>
 </div>
 
