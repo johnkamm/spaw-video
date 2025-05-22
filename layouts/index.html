@@ -13,10 +13,10 @@
 
 <!-- Navigation Menu -->
 <div class="nav-menu">
-  <a href="/" class="nav-link active">Home</a>
-  <a href="#featured-services" class="nav-link">Services</a>
+  <a href="{{ "/" | relURL }}" class="nav-link active">Home</a>
+  <a href="{{ "/#featured-services" | relURL }}" class="nav-link">Services</a>
   <a href="{{ "/position" | relURL }}" class="nav-link">Position Paper</a>
-  <a href="/contact" class="nav-link">Contact</a>
+  <a href="{{ "/contact" | relURL }}" class="nav-link">Contact</a>
 </div>
 
 <!-- Menu Overlay -->
@@ -189,14 +189,13 @@
     <!-- Vertical Divider -->
     <div class="footer-divider"></div>
     
-    <!-- Navigation on Right -->
-    <div class="footer-nav">
-      <a href="/" class="footer-link">Home</a>
-      <a href="#featured-services" class="footer-link">Services</a>
-      <a href="/position" class="footer-link">Position Paper</a>
-      <a href="/contact" class="footer-link">Contact</a>
-    </div>
-  </div>
+<!-- Navigation on Right -->
+<div class="footer-nav">
+  <a href="{{ "/" | relURL }}" class="footer-link">Home</a>
+  <a href="{{ "/#featured-services" | relURL }}" class="footer-link">Services</a>
+  <a href="{{ "/position" | relURL }}" class="footer-link">Position Paper</a>
+  <a href="{{ "/contact" | relURL }}" class="footer-link">Contact</a>
+</div>
   
   <!-- Copyright stays at bottom -->
   <div class="footer-copyright">
