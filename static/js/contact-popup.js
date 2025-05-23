@@ -1,110 +1,102 @@
-// Enhanced contact-popup.js with better debugging and page-specific handling
+// Production contact-popup.js - clean version without debug logging
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('Contact popup script loaded');
+  // Find all contact links by text content
+  const allLinks = document.querySelectorAll('a');
+  const contactLinks = [];
   
-  // Get elements
-  const contactLinks = document.querySelectorAll('.nav-menu a[href="/contact"], .footer-link[href="/contact"]');
+  allLinks.forEach(link => {
+    const linkText = link.textContent.trim().toLowerCase();
+    if (linkText === 'contact') {
+      contactLinks.push(link);
+    }
+  });
+  
   const contactPopup = document.querySelector('.contact-popup');
   const contactOverlay = document.querySelector('.contact-popup-overlay');
   const closeButton = document.querySelector('.close-popup');
   const contactForm = document.getElementById('contact-form');
   
-  console.log('Found contact links:', contactLinks.length);
-  console.log('Contact popup element:', contactPopup);
-  console.log('Contact overlay element:', contactOverlay);
+  // Exit if required elements don't exist
+  if (!contactPopup || !contactOverlay) {
+    return;
+  }
   
   // Add event listeners to all contact links
-  contactLinks.forEach((link, index) => {
-      console.log(`Adding click listener to contact link ${index}:`, link);
-      link.addEventListener('click', function(e) {
-          console.log('Contact link clicked:', this);
-          e.preventDefault();
-          
-          // Check if popup elements exist
-          if (!contactPopup || !contactOverlay) {
-              console.error('Contact popup elements not found');
-              return;
-          }
-          
-          // Open popup
-          contactPopup.style.display = 'block';
-          contactOverlay.style.display = 'block';
-          
-          // Add animation classes
-          contactPopup.classList.add('fade-in');
-          contactOverlay.classList.add('fade-in');
-          
-          console.log('Contact popup opened');
-          
-          // Close the hamburger menu if it's open
-          const hamburgerMenu = document.querySelector('.hamburger-menu');
-          const navMenu = document.querySelector('.nav-menu');
-          const menuOverlay = document.querySelector('.menu-overlay');
-          
-          if (hamburgerMenu && navMenu && menuOverlay) {
-              hamburgerMenu.classList.remove('open');
-              navMenu.classList.remove('open');
-              menuOverlay.classList.remove('open');
-              console.log('Hamburger menu closed');
-          }
-      });
+  contactLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      // Open popup
+      contactPopup.style.display = 'block';
+      contactOverlay.style.display = 'block';
+      
+      // Add animation classes
+      contactPopup.classList.add('fade-in');
+      contactOverlay.classList.add('fade-in');
+      
+      // Close the hamburger menu if it's open
+      const hamburgerMenu = document.querySelector('.hamburger-menu');
+      const navMenu = document.querySelector('.nav-menu');
+      const menuOverlay = document.querySelector('.menu-overlay');
+      
+      if (hamburgerMenu && navMenu && menuOverlay) {
+        hamburgerMenu.classList.remove('open');
+        navMenu.classList.remove('open');
+        menuOverlay.classList.remove('open');
+      }
+    });
   });
   
   // Close popup when clicking the close button
   if (closeButton) {
-      closeButton.addEventListener('click', closeContactPopup);
+    closeButton.addEventListener('click', closeContactPopup);
   }
   
   // Close popup when clicking outside
   if (contactOverlay) {
-      contactOverlay.addEventListener('click', closeContactPopup);
+    contactOverlay.addEventListener('click', closeContactPopup);
   }
   
   // Handle form submission
   if (contactForm) {
-      contactForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-          
-          // Get form values
-          const name = document.getElementById('name').value;
-          const email = document.getElementById('email').value;
-          const subject = document.getElementById('subject').value;
-          const message = document.getElementById('message').value;
-          
-          console.log('Form submitted:', { name, email, subject, message });
-          
-          // Reset the form
-          contactForm.reset();
-          
-          // Show a simple alert (you could replace this with a nicer notification)
-          alert('Thank you for your message! We will get back to you soon.');
-          
-          // Close the popup
-          closeContactPopup();
-      });
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form values
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+      
+      // Reset the form
+      contactForm.reset();
+      
+      // Show success message
+      alert('Thank you for your message! We will get back to you soon.');
+      
+      // Close the popup
+      closeContactPopup();
+    });
   }
   
   function closeContactPopup() {
-      console.log('Closing contact popup');
-      
-      if (!contactPopup || !contactOverlay) {
-          console.error('Contact popup elements not found for closing');
-          return;
-      }
-      
-      // Add fade-out animation
-      contactPopup.classList.remove('fade-in');
-      contactOverlay.classList.remove('fade-in');
-      contactPopup.classList.add('fade-out');
-      contactOverlay.classList.add('fade-out');
-      
-      // Hide elements after animation completes
-      setTimeout(function() {
-          contactPopup.style.display = 'none';
-          contactOverlay.style.display = 'none';
-          contactPopup.classList.remove('fade-out');
-          contactOverlay.classList.remove('fade-out');
-          console.log('Contact popup hidden');
-      }, 300);
+    if (!contactPopup || !contactOverlay) {
+      return;
+    }
+    
+    // Add fade-out animation
+    contactPopup.classList.remove('fade-in');
+    contactOverlay.classList.remove('fade-in');
+    contactPopup.classList.add('fade-out');
+    contactOverlay.classList.add('fade-out');
+    
+    // Hide elements after animation completes
+    setTimeout(function() {
+      contactPopup.style.display = 'none';
+      contactOverlay.style.display = 'none';
+      contactPopup.classList.remove('fade-out');
+      contactOverlay.classList.remove('fade-out');
+    }, 300);
   }
 });

@@ -13,10 +13,10 @@
 
 <!-- Navigation Menu -->
 <div class="nav-menu">
-  <a href="/" class="nav-link active">Home</a>
+  <a href="/" class="nav-link">Home</a>
   <a href="/#featured-services" class="nav-link">Services</a>
   <a href="/position" class="nav-link">Position Paper</a>
-  <a href="/contact" class="nav-link">Contact</a>
+  <a href="#" class="nav-link contact-link">Contact</a>
 </div>
 
 <!-- Menu Overlay -->
@@ -69,6 +69,7 @@
 <!-- Footer -->
 <footer class="site-footer">
   <div class="footer-content">
+    <!-- Team Members on Left -->
     <div class="footer-team">
       <div class="footer-team-member">
         <img src="{{ "images/team-member-1.jpg" | relURL }}" alt="Kyle Holland">
@@ -108,18 +109,21 @@
       </div>
     </div>
     
+    <!-- Vertical Divider -->
     <div class="footer-divider"></div>
     
-<!-- Footer Navigation -->
-<div class="footer-nav">
-  <a href="/" class="footer-link">Home</a>
-  <a href="/#featured-services" class="footer-link">Services</a>
-  <a href="/position" class="footer-link">Position Paper</a>
-  <a href="/contact" class="footer-link">Contact</a>
-</div>
+    <!-- Footer Navigation -->
+    <div class="footer-nav">
+      <a href="/" class="footer-link">Home</a>
+      <a href="/#featured-services" class="footer-link">Services</a>
+      <a href="/position" class="footer-link">Position Paper</a>
+      <a href="#" class="footer-link contact-link">Contact</a>
+    </div>
   
-  <div class="footer-copyright">
-    <p>&copy; 2025 Website created by Southpaw Strategies</p>
+    <!-- Copyright stays at bottom -->
+    <div class="footer-copyright">
+      <p>&copy; 2025 Website created by Southpaw Strategies</p>
+    </div>
   </div>
 </footer>
 {{ end }}
