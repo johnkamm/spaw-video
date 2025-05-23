@@ -1,3 +1,14 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://johnkamm.github.io/spaw-video/'
 languageCode = 'en-us'
 title = 'Southpaw Strategies'
+
+canonifyURLs = true
+relativeURLs = false
+publishDir = "public"
+assetDir = "assets"
+staticDir = ["static"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
