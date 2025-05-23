@@ -1,5 +1,5 @@
 ---
-title: "Southpaw Strategies Consulting"
+title: "Southpaw Strategies"
 ---
 
-Cultivating efficiency that competitors can't match
+Cultivating Efficiency
