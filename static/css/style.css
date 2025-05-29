@@ -148,7 +148,7 @@ html, body {
   z-index: 3; /* Content above video */
   color: white;
   text-align: center;
-  padding: 0 20px;
+  padding: 0 0px;
 }
 
 .hero-content h1 {
@@ -158,7 +158,7 @@ html, body {
 }
 
 .hero-content .description {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9); /* Stronger shadow */
   max-width: 80%;
 }
@@ -310,11 +310,11 @@ html, body {
   to { opacity: 0; }
 }
 
-/* Cyrus Section with New Styling */
+/* Cyrus Section with improved centering */
 .cyrus-section {
   width: 100%;
   background-color: #000;
-  padding: 60px 40px;
+  padding: 20px 40px; /* Match featured services padding */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -323,14 +323,16 @@ html, body {
 .cyrus-container {
   max-width: 1200px;
   width: 100%;
-  background-color: #1c3d5a; /* Different blue shade than service boxes */
+  background-color: #1c3d5a;
   border-radius: 20px;
   padding: 40px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   overflow: hidden;
+  margin: 0 auto; /* Ensure perfect centering */
+  position: relative; /* Add positioning context */
 }
 
-/* Use float for proper text wrapping */
+/* Keep original float layout for proper text wrapping */
 .cyrus-image-container {
   float: left;
   width: 40%;
@@ -390,27 +392,30 @@ html, body {
   text-align: center;
 }
 
-/* Responsive styles for Cyrus section */
-@media (max-width: 992px) {
-  .cyrus-image-container {
-    float: none;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto 30px;
-  }
-  
-  .cyrus-text {
-    text-align: center;
-  }
-}
-
+/* Mobile responsive - fix Cyrus section padding */
 @media (max-width: 768px) {
   .cyrus-section {
-    padding: 40px 20px;
+     padding: 10px 0; /* Remove horizontal padding */
   }
   
   .cyrus-container {
-    padding: 30px 20px;
+    padding: 30px 20px 40px 20px; /* Match service item padding */
+    margin: 10px 20px; /* Add horizontal margin to create the black strips */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Add shadow to match service items */
+    width: calc(100% - 40px); /* Account for the margins */
+    box-sizing: border-box; /* Include padding in width */
+  }
+  
+  /* Make image take full width on mobile */
+  .cyrus-image-container {
+    float: none;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  
+  .cyrus-content {
+    gap: 20px;
   }
   
   .cyrus-text h2 {
@@ -756,10 +761,10 @@ html, body {
 /* Team members section - horizontal row on LEFT side */
 .footer-team {
   display: flex;
-  gap: 25px;
+  gap: 125px;
   width: 100%;
   align-items: center;
-  margin-left: -220px; /* Push the entire team group left to center the divider */
+  margin-left: -120px; /* Push the entire team group left to center the divider */
 }
 
 .footer-team-member {
@@ -826,7 +831,7 @@ html, body {
   flex-wrap: nowrap; /* Prevent wrapping */
   justify-content: flex-end;
   align-items: center;
-  margin-right: 120px; /* Remove right margin */
+  margin-right: 20px; /* Remove right margin */
 }
 
 .footer-link {
