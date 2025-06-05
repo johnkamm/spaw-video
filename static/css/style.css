@@ -310,34 +310,58 @@ html, body {
   to { opacity: 0; }
 }
 
-/* Cyrus Section with improved centering */
+/* Updated Cyrus Section with proper vertical alignment */
 .cyrus-section {
   width: 100%;
   background-color: #000;
-  padding: 20px 40px; /* Match featured services padding */
+  padding: 20px 40px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  align-items: stretch; /* Make both containers same height */
+  gap: 20px;
+  box-sizing: border-box;
+  max-width: 100vw;
+  overflow: hidden;
 }
 
 .cyrus-container {
-  max-width: 1200px;
-  width: 100%;
+  max-width: 960px;
+  width: 48%;
   background-color: #1c3d5a;
   border-radius: 20px;
-  padding: 40px;
+  padding: 32px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   overflow: hidden;
-  margin: 0 auto; /* Ensure perfect centering */
-  position: relative; /* Add positioning context */
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* Keep original float layout for proper text wrapping */
+/* Right image container - now matches height and aligns properly */
+.cyrus-right-image {
+  width: 48%;
+  display: flex;
+  align-items: stretch; /* Stretch to match container height */
+  justify-content: center;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.cyrus-right-image img {
+  width: 100%;
+  height: 100%; /* Take full height of container */
+  object-fit: cover; /* Cover the entire area while maintaining aspect ratio */
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Keep original float layout for proper text wrapping inside container */
 .cyrus-image-container {
   float: left;
   width: 40%;
-  margin-right: 40px;
-  margin-bottom: 30px;
+  margin-right: 32px;
+  margin-bottom: 24px;
 }
 
 .cyrus-image {
@@ -354,17 +378,17 @@ html, body {
 }
 
 .cyrus-text h2 {
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 600;
   margin-top: 0;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   line-height: 1.4;
 }
 
 .cyrus-text p {
-  font-size: 1.1rem;
+  font-size: 0.88rem;
   line-height: 1.6;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   font-weight: 400;
 }
 
@@ -376,15 +400,15 @@ html, body {
 }
 
 .cyrus-highlight {
-  font-size: 1.3rem;
+  font-size: 1.04rem;
   font-weight: 600;
   font-style: italic;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   text-align: center;
 }
 
 .cyrus-tagline {
-  font-size: 1.2rem;
+  font-size: 0.96rem;
   font-weight: 700;
   margin-bottom: 0;
   text-transform: uppercase;
@@ -392,18 +416,33 @@ html, body {
   text-align: center;
 }
 
-/* Mobile responsive - fix Cyrus section padding */
+/* Mobile responsive - stack vertically on mobile */
 @media (max-width: 768px) {
   .cyrus-section {
-     padding: 10px 0; /* Remove horizontal padding */
+    flex-direction: column;
+    padding: 10px 20px;
+    align-items: stretch;
+    justify-content: flex-start;
   }
   
   .cyrus-container {
-    padding: 30px 20px 40px 20px; /* Match service item padding */
-    margin: 10px 20px; /* Add horizontal margin to create the black strips */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Add shadow to match service items */
-    width: calc(100% - 40px); /* Account for the margins */
-    box-sizing: border-box; /* Include padding in width */
+    width: 100%;
+    padding: 24px 16px 32px 16px;
+    margin: 10px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+  }
+  
+  .cyrus-right-image {
+    width: 100%;
+    margin: 10px 0;
+    align-items: center;
+  }
+  
+  .cyrus-right-image img {
+    height: auto; /* Let image maintain natural height on mobile */
+    max-height: 300px;
+    object-fit: contain;
   }
   
   /* Make image take full width on mobile */
@@ -411,27 +450,42 @@ html, body {
     float: none;
     width: 100%;
     margin-right: 0;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
   }
   
   .cyrus-content {
-    gap: 20px;
+    gap: 16px;
   }
   
   .cyrus-text h2 {
-    font-size: 1.7rem;
+    font-size: 1.36rem;
   }
   
   .cyrus-text p {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
   
   .cyrus-highlight {
-    font-size: 1.1rem;
+    font-size: 0.88rem;
   }
   
   .cyrus-tagline {
-    font-size: 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Tablet responsive */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .cyrus-section {
+    padding: 20px 30px;
+  }
+  
+  .cyrus-container {
+    width: 47%;
+  }
+  
+  .cyrus-right-image {
+    width: 47%;
   }
 }
 
