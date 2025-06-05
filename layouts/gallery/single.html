@@ -1,0 +1,186 @@
+{{ define "main" }}
+<!-- Logo -->
+<div class="logo-container">
+  <img src="{{ "images/logo1.png" | relURL }}" alt="Southpaw Strategies" class="site-logo">
+</div>
+
+<!-- Hamburger Menu -->
+<div class="hamburger-menu">
+  <div class="hamburger-line"></div>
+  <div class="hamburger-line"></div>
+  <div class="hamburger-line"></div>
+</div>
+
+<!-- Navigation Menu -->
+<div class="nav-menu">
+  <a href="/" class="nav-link">Home</a>
+  <a href="/#featured-services" class="nav-link">Services</a>
+  <a href="/position" class="nav-link">Position Paper</a>
+  <a href="#" class="nav-link contact-link">Contact</a>
+</div>
+
+<!-- Menu Overlay -->
+<div class="menu-overlay"></div>
+
+<!-- Contact Form Popup -->
+<div class="contact-popup">
+  <div class="contact-popup-content">
+    <div class="contact-popup-header">
+      <h2>Contact Us</h2>
+      <button class="close-popup">&times;</button>
+    </div>
+    <form id="contact-form">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Your Email Address</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="submit-button">Send Message</button>
+    </form>
+  </div>
+</div>
+
+<!-- Contact Form Popup Overlay -->
+<div class="contact-popup-overlay"></div>
+
+<!-- Gallery Page Content -->
+<div class="page-content">
+  <div class="container">
+    <div class="gallery-page">
+      <div class="gallery-header">
+        <h1>{{ .Title }}</h1>
+        <div class="gallery-description">
+          {{ .Content }}
+        </div>
+      </div>
+      
+      <!-- Replace just the gallery grid section in your layouts/gallery/single.html -->
+<div class="gallery-grid">
+  <div class="gallery-item" data-image="{{ "images/image1.jpg" | absURL }}">
+    <img src="{{ "images/image1.jpg" | relURL }}" alt="Mechanized Cannabis Cultivation - Image 1" loading="lazy">
+    <div class="gallery-overlay">
+      <i class="fas fa-expand-alt"></i>
+    </div>
+  </div>
+  <div class="gallery-item" data-image="{{ "images/image2.jpg" | absURL }}">
+    <img src="{{ "images/image2.jpg" | relURL }}" alt="Mechanized Cannabis Cultivation - Image 2" loading="lazy">
+    <div class="gallery-overlay">
+      <i class="fas fa-expand-alt"></i>
+    </div>
+  </div>
+  <div class="gallery-item" data-image="{{ "images/image3.jpg" | absURL }}">
+    <img src="{{ "images/image3.jpg" | relURL }}" alt="Mechanized Cannabis Cultivation - Image 3" loading="lazy">
+    <div class="gallery-overlay">
+      <i class="fas fa-expand-alt"></i>
+    </div>
+  </div>
+  <div class="gallery-item" data-image="{{ "images/image4.jpg" | absURL }}">
+    <img src="{{ "images/image4.jpg" | relURL }}" alt="Mechanized Cannabis Cultivation - Image 4" loading="lazy">
+    <div class="gallery-overlay">
+      <i class="fas fa-expand-alt"></i>
+    </div>
+  </div>
+  <div class="gallery-item" data-image="{{ "images/image5.jpg" | absURL }}">
+    <img src="{{ "images/image5.jpg" | relURL }}" alt="Mechanized Cannabis Cultivation - Image 5" loading="lazy">
+    <div class="gallery-overlay">
+      <i class="fas fa-expand-alt"></i>
+    </div>
+  </div>
+  <div class="gallery-item" data-image="{{ "images/image6.jpg" | absURL }}">
+    <img src="{{ "images/image6.jpg" | relURL }}" alt="Mechanized Cannabis Cultivation - Image 6" loading="lazy">
+    <div class="gallery-overlay">
+      <i class="fas fa-expand-alt"></i>
+    </div>
+  </div>
+  <div class="gallery-item" data-image="{{ "images/image7.jpg" | absURL }}">
+    <img src="{{ "images/image7.jpg" | relURL }}" alt="Mechanized Cannabis Cultivation - Image 7" loading="lazy">
+    <div class="gallery-overlay">
+      <i class="fas fa-expand-alt"></i>
+    </div>
+  </div>
+  <div class="gallery-item" data-image="{{ "images/image8.jpg" | absURL }}">
+    <img src="{{ "images/image8.jpg" | relURL }}" alt="Mechanized Cannabis Cultivation - Image 8" loading="lazy">
+    <div class="gallery-overlay">
+      <i class="fas fa-expand-alt"></i>
+    </div>
+  </div>
+  <div class="gallery-item" data-image="{{ "images/image9.jpg" | absURL }}">
+    <img src="{{ "images/image9.jpg" | relURL }}" alt="Mechanized Cannabis Cultivation - Image 9" loading="lazy">
+    <div class="gallery-overlay">
+      <i class="fas fa-expand-alt"></i>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+
+<!-- IMPORTANT: Image Popup Modal - Make sure this is included! -->
+<div class="image-modal" id="imageModal">
+  <div class="modal-overlay"></div>
+  <div class="modal-content">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <img src="" alt="" id="modalImage">
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <!-- Team Members on Left -->
+    <div class="footer-team">
+      <div class="footer-team-member">
+        <img src="{{ "images/team-member-1.jpg" | relURL }}" alt="Kyle Holland">
+        <div class="member-info">
+          <div class="member-name">
+            Kyle Holland
+            <a href="https://www.linkedin.com/in/kyle-holland-83a66510/" target="_blank" rel="noopener noreferrer" class="linkedin-icon" aria-label="Kyle Holland LinkedIn Profile">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
+          <p class="member-title">Title Placeholder #1</p>
+        </div>
+      </div>
+      <div class="footer-team-member">
+        <img src="{{ "images/team-member-2.jpg" | relURL }}" alt="John Kamm">
+        <div class="member-info">
+          <div class="member-name">
+            John Kamm
+            <a href="https://www.linkedin.com/in/john-kamm-8a06082a5/" target="_blank" rel="noopener noreferrer" class="linkedin-icon" aria-label="John Kamm LinkedIn Profile">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
+          <p class="member-title">Title Placeholder #2</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Vertical Divider -->
+    <div class="footer-divider"></div>
+    
+    <!-- Footer Navigation -->
+    <div class="footer-nav">
+      <a href="/" class="footer-link">Home</a>
+      <a href="/#featured-services" class="footer-link">Services</a>
+      <a href="/position" class="footer-link">Position Paper</a>
+      <a href="#" class="footer-link contact-link">Contact</a>
+    </div>
+  
+    <!-- Copyright stays at bottom -->
+    <div class="footer-copyright">
+      <p>&copy; 2025 Website created by Southpaw Strategies</p>
+    </div>
+  </div>
+</footer>
+{{ end }}
