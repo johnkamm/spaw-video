@@ -7,24 +7,25 @@ html, body {
   overflow-x: hidden; /* Allow vertical scrolling for services section */
   background-color: #000; /* Black background to avoid white edges */
   font-family: 'Poppins', sans-serif;
+  position: relative; /* Add this line */
 }
 
-/* Logo Styles */
+/* Logo Styles - Scrolls away naturally */
 .logo-container {
-  position: fixed;
-  top: 27px; /* Matching hamburger menu vertical position */
-  left: 50px; /* Same distance from left as hamburger is from right */
-  width: 156px; /* Matching hamburger menu width */
-  height: 156px; /* Making it square to match hamburger menu area */
-  z-index: 100; /* Same z-index as hamburger menu */
+  position: absolute;
+  top: 27px;
+  left: 50px;
+  width: 156px;
+  height: 156px;
+  z-index: 100;
 }
 
 .site-logo {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 50%; /* Makes it circular */
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow to match hamburger lines */
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   transition: opacity 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -33,9 +34,19 @@ html, body {
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
 }
 
-/* Hamburger Menu Styles */
+/* Mobile responsive logo sizing */
+@media (max-width: 948px) {
+  .logo-container {
+    width: 60px; /* Match hamburger menu size area */
+    height: 60px;
+    top: 20px; /* Adjust top position slightly */
+    left: 20px; /* Adjust left position slightly */
+  }
+}
+
+/* Hamburger Menu Styles - Stays fixed in place */
 .hamburger-menu {
-  position: fixed;
+  position: fixed; /* Stays fixed - doesn't scroll away */
   top: 30px;
   right: 50px;
   width: 36px;
@@ -157,10 +168,12 @@ html, body {
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9); /* Stronger shadow */
 }
 
+/* Move just the description up closer to the title */
 .hero-content .description {
   font-size: 1.75rem;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9); /* Stronger shadow */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
   max-width: 80%;
+  margin-top: -35px; /* Negative margin pulls it up closer to the title */
 }
 
 /* Overlay for when menu is open */
@@ -354,6 +367,11 @@ html, body {
   object-fit: cover; /* Cover the entire area while maintaining aspect ratio */
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.cyrus-right-image img:hover {
+  transform: scale(1.02);
 }
 
 /* Keep original float layout for proper text wrapping inside container */
@@ -885,7 +903,8 @@ html, body {
   flex-wrap: nowrap; /* Prevent wrapping */
   justify-content: flex-end;
   align-items: center;
-  margin-right: 20px; /* Remove right margin */
+  padding-left: 30px; /* Use padding instead of margin - this won't affect grid layout */
+  margin-right: -120px; /* Add this line to balance the grid */
 }
 
 .footer-link {
