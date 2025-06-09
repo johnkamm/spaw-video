@@ -812,7 +812,16 @@ html, body {
   }
 }
 
-/* Footer with Grid Layout for Precise Positioning */
+/* Footer with Grid Layout for Precise Positioning - FIXED VERSION */
+.site-footer {
+  background-color: #111;
+  color: white;
+  padding: 30px 0;
+  margin-top: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Footer with Grid Layout for Precise Positioning - FIXED VERSION */
 .site-footer {
   background-color: #111;
   color: white;
@@ -828,21 +837,24 @@ html, body {
   display: grid;
   grid-template-columns: 1fr 1px 1fr;
   align-items: center;
+  gap: 20px; /* Add gap for breathing room */
 }
 
 /* Team members section - horizontal row on LEFT side */
 .footer-team {
   display: flex;
-  gap: 125px;
+  gap: 60px; /* Reduced from 125px */
   width: 100%;
   align-items: center;
-  margin-left: -120px; /* Push the entire team group left to center the divider */
+  justify-content: flex-start; /* Changed from default */
+  margin-left: 0; /* Removed negative margin */
 }
 
 .footer-team-member {
   display: flex;
   align-items: center;
   flex-shrink: 0;
+  min-width: 0; /* Allow shrinking if needed */
 }
 
 .footer-team-member img {
@@ -851,11 +863,13 @@ html, body {
   border-radius: 50%;
   object-fit: cover;
   margin-right: 12px;
+  flex-shrink: 0; /* Prevent image from shrinking */
 }
 
 .footer-team-member .member-info {
   display: flex;
   flex-direction: column;
+  min-width: 0; /* Allow text to wrap if needed */
 }
 
 .footer-team-member .member-name {
@@ -865,7 +879,8 @@ html, body {
   color: white;
   display: flex;
   align-items: center;
-  gap: 6px; /* Smaller gap between name and LinkedIn icon */
+  gap: 6px;
+  white-space: nowrap; /* Prevent name wrapping */
 }
 
 .footer-team-member .member-title {
@@ -882,6 +897,7 @@ html, body {
   font-size: 1rem;
   color: #0077b5;
   transition: color 0.3s ease;
+  flex-shrink: 0; /* Prevent icon from shrinking */
 }
 
 .footer-team-member .linkedin-icon:hover {
@@ -899,12 +915,11 @@ html, body {
 /* Navigation section - RIGHT side of grid */
 .footer-nav {
   display: flex;
-  gap: 40px; /* Reduced gap */
-  flex-wrap: nowrap; /* Prevent wrapping */
+  gap: 25px; /* Reduced from 40px */
+  flex-wrap: nowrap;
   justify-content: flex-end;
   align-items: center;
-  padding-left: 30px; /* Use padding instead of margin - this won't affect grid layout */
-  margin-right: -120px; /* Add this line to balance the grid */
+  margin-right: 0; /* Removed negative margin */
 }
 
 .footer-link {
@@ -912,9 +927,9 @@ html, body {
   text-decoration: none;
   font-size: 1.1rem;
   transition: color 0.3s ease;
-  padding: 5px 8px; /* Reduced horizontal padding */
+  padding: 5px 8px;
   position: relative;
-  white-space: nowrap; /* Prevent text wrapping */
+  white-space: nowrap;
 }
 
 .footer-link:after {
@@ -944,31 +959,173 @@ html, body {
   margin-top: 20px;
 }
 
-/* Responsive styles */
-@media (max-width: 768px) {
+/* Responsive breakpoints with better spacing management */
+
+/* Large screens - ensure good spacing */
+@media (max-width: 1400px) {
+  .footer-content {
+    padding: 0 30px;
+  }
+  
+  .footer-team {
+    gap: 50px;
+  }
+  
+  .footer-nav {
+    gap: 20px;
+  }
+}
+
+/* Medium-large screens - start reducing spacing */
+@media (max-width: 1200px) {
+  .footer-content {
+    padding: 0 25px;
+  }
+  
+  .footer-team {
+    gap: 40px;
+  }
+  
+  .footer-nav {
+    gap: 18px;
+  }
+  
+  .footer-link {
+    font-size: 1rem;
+    padding: 5px 6px;
+  }
+}
+
+/* When content starts getting cramped - reduce further */
+@media (max-width: 1100px) {
+  .footer-team {
+    gap: 30px;
+  }
+  
+  .footer-nav {
+    gap: 15px;
+  }
+  
+  .footer-team-member .member-name {
+    font-size: 1rem;
+  }
+  
+  .footer-team-member .member-title {
+    font-size: 0.85rem;
+  }
+}
+
+/* Critical breakpoint for 1000-1050px range where Contact gets cut off */
+@media (max-width: 1050px) {
+  .footer-content {
+    padding: 0 15px; /* Reduce padding further */
+  }
+  
+  .footer-team {
+    gap: 25px; /* Tighter gap between team members */
+  }
+  
+  .footer-nav {
+    gap: 12px; /* Much tighter gap between nav links */
+  }
+  
+  .footer-link {
+    font-size: 0.95rem; /* Slightly smaller font */
+    padding: 5px 4px; /* Reduce horizontal padding */
+  }
+  
+  .footer-team-member .member-name {
+    font-size: 0.95rem;
+  }
+  
+  .footer-team-member .member-title {
+    font-size: 0.8rem;
+  }
+}
+
+/* Stack layout for smaller screens */
+@media (max-width: 1000px) {
   .footer-content {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    gap: 20px;
+    grid-template-rows: auto auto auto auto;
+    gap: 25px;
+    text-align: center;
     padding: 0 20px;
+  }
+  
+  /* Team members in a row */
+  .footer-team {
+    flex-direction: row;
+    gap: 40px;
+    justify-content: center;
+    order: 1;
+  }
+  
+  /* Divider */
+  .footer-divider {
+    width: 60%;
+    height: 1px;
+    justify-self: center;
+    order: 2;
+  }
+  
+  /* Navigation */
+  .footer-nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    order: 3;
+  }
+  
+  /* Copyright stays last */
+  .footer-copyright {
+    order: 4;
+  }
+}
+
+/* Small screens - stack team members vertically */
+@media (max-width: 768px) {
+  .footer-content {
+    padding: 0 15px;
+    gap: 20px;
   }
   
   .footer-team {
     flex-direction: column;
     gap: 20px;
-    align-items: center;
-    margin-left: 0; /* Reset margin on mobile */
-  }
-  
-  .footer-divider {
-    width: 80%;
-    height: 1px;
-    justify-self: center;
   }
   
   .footer-nav {
-    justify-content: center;
-    flex-wrap: wrap; /* Allow wrapping on mobile */
+    gap: 15px;
+  }
+  
+  .footer-link {
+    font-size: 0.95rem;
+    padding: 8px 10px;
+  }
+}
+
+/* Very small screens - ensure everything fits */
+@media (max-width: 480px) {
+  .footer-content {
+    padding: 0 10px;
+  }
+  
+  .footer-team-member .member-name {
+    font-size: 0.95rem;
+  }
+  
+  .footer-team-member .member-title {
+    font-size: 0.8rem;
+  }
+  
+  .footer-link {
+    font-size: 0.9rem;
+    padding: 6px 8px;
+  }
+  
+  .footer-nav {
+    gap: 12px;
   }
 }
 
