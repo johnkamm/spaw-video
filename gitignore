@@ -10,6 +10,8 @@ builds
 package-lock.json
 public
 .public
+/public
+/public/
 resources
 .hugo_build.lock
 jsconfig.json
