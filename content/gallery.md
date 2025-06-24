@@ -3,6 +3,7 @@ title: "Gallery - Mechanized Cannabis Cultivation"
 date: 2025-01-21
 draft: false
 type: "gallery"
+layout: "single"
 ---
 
 ## Our Technology in Action

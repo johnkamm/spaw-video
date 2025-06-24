@@ -7,17 +7,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/style.css" | absURL }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
     {{ block "main" . }}{{ end }}
-    <script src="{{ "js/video-resize.js" | relURL }}"></script>
-    <script src="{{ "js/hamburger-menu.js" | relURL }}"></script>
-    <script src="{{ "js/contact-popup.js" | relURL }}"></script>
-    <script src="{{ "js/scroll-arrow.js" | relURL }}"></script>
-    <script src="{{ "js/footer-links.js" | relURL }}"></script>
-    <script src="{{ "js/gallery-modal.js" | relURL }}"></script>
+    <script src="{{ "js/video-resize.js" | absURL }}"></script>
+    <script src="{{ "js/hamburger-menu.js" | absURL }}"></script>
+    <script src="{{ "js/contact-popup.js" | absURL }}"></script>
+    <script src="{{ "js/scroll-arrow.js" | absURL }}"></script>
+    <script src="{{ "js/footer-links.js" | absURL }}"></script>
+    <script src="{{ "js/gallery-modal.js" | absURL }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </body>
 </html>
