@@ -17,7 +17,7 @@
   <a href="/gallery" class="nav-link">Gallery</a>
   <a href="#featured-services" class="nav-link">Services</a>
   <a href="/position" class="nav-link">Position Paper</a>
-  <a href="#" class="nav-link contact-link">Contact</a>
+  <a href="#" class="nav-link" onclick="openContactPopup()">Contact</a>
 </div>
 
 <!-- Menu Overlay -->
@@ -28,37 +28,51 @@
   <div class="contact-popup-content">
     <div class="contact-popup-header">
       <h2>Contact Us</h2>
-      <button class="close-popup">&times;</button>
+      <button class="close-popup" onclick="closeContactPopup()">&times;</button>
     </div>
-    <form id="contact-form">
+    
+    <div class="success-message" id="successMessage" style="display: none;">
+      Thank you! Your message has been sent successfully.
+    </div>
+    
+    <div class="error-message" id="errorMessage" style="display: none;">
+      Sorry, there was an error sending your message. Please try again.
+    </div>
+
+    <form id="contact-form" action="https://formspree.io/f/xwpbrznp" method="POST">
       <div class="form-group">
         <label for="name">Your Name</label>
         <input type="text" id="name" name="name" required>
       </div>
       <div class="form-group">
         <label for="email">Your Email Address</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="_replyto" required>
       </div>
       <div class="form-group">
         <label for="subject">Subject</label>
-        <input type="text" id="subject" name="subject" required>
+        <input type="text" id="subject" name="_subject" required>
       </div>
       <div class="form-group">
         <label for="message">Message</label>
         <textarea id="message" name="message" rows="5" required></textarea>
       </div>
-      <button type="submit" class="submit-button">Send Message</button>
+      
+      <!-- Hidden field to send to both email addresses -->
+      <input type="hidden" name="_cc" value="amerikyle@gmail.com">
+      <input type="hidden" name="_next" value="https://yoursite.com/thank-you">
+      
+      <button type="submit" class="submit-button" id="submitButton">Send Message</button>
     </form>
   </div>
 </div>
 
 <!-- Contact Form Popup Overlay -->
-<div class="contact-popup-overlay"></div>
+<div class="contact-popup-overlay" onclick="closeContactPopup()"></div>
 
 <div class="hero-section">
   <div class="video-container">
     <video autoplay muted loop playsinline>
-      <source src="{{ "images/dronevidtest2.mp4" | relURL }}" type="video/mp4">
+      <source src="{{ "images/dronevidtest1.mp4" | relURL }}" type="video/mp4">
     </video>
     
     <!-- Scroll Down Arrow -->
@@ -102,7 +116,7 @@
   
   <!-- NEW: Right side image -->
   <div class="cyrus-right-image">
-    <img src="{{ "images/hhh1.jpg" | relURL }}" alt="Cannabis Cultivation Technology" loading="lazy">
+    <img src="{{ "images/image1.jpg" | relURL }}" alt="Cannabis Cultivation Technology" loading="lazy">
   </div>
 </div>
 
@@ -116,13 +130,13 @@
     
     <div class="gallery-preview-grid">
       <div class="gallery-preview-item">
-        <img src="{{ "images/image1.jpg" | relURL }}" alt="Mechanized Cannabis Cultivation - Image 1" loading="lazy">
+        <img src="{{ "images/tractors.jpg" | relURL }}" alt="Mechanized Cannabis Cultivation - Image 1" loading="lazy">
       </div>
       <div class="gallery-preview-item">
-        <img src="{{ "images/image2.jpg" | relURL }}" alt="Mechanized Cannabis Cultivation - Image 2" loading="lazy">
+        <img src="{{ "images/irrigation1.jpg" | relURL }}" alt="Mechanized Cannabis Cultivation - Image 2" loading="lazy">
       </div>
       <div class="gallery-preview-item">
-        <img src="{{ "images/image3.jpg" | relURL }}" alt="Mechanized Cannabis Cultivation - Image 3" loading="lazy">
+        <img src="{{ "images/field-forklift.jpg" | relURL }}" alt="Mechanized Cannabis Cultivation - Image 3" loading="lazy">
       </div>
     </div>
     
@@ -213,7 +227,7 @@
   <a href="/gallery" class="footer-link">Gallery</a>
   <a href="#featured-services" class="footer-link">Services</a>
   <a href="/position" class="footer-link">Position Paper</a>
-  <a href="#" class="footer-link contact-link">Contact</a>
+  <a href="#" class="footer-link" onclick="openContactPopup()">Contact</a>
 </div>
   
   <!-- Copyright stays at bottom -->
