@@ -18,6 +18,13 @@
     <script src="{{ "js/scroll-arrow.js" | absURL }}"></script>
     <script src="{{ "js/footer-links.js" | absURL }}"></script>
     <script src="{{ "js/gallery-modal.js" | absURL }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <!-- EmailJS Setup -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("9fVwjoY22dGJBJkKS"); // Your public key
+        })();
+    </script>
 </body>
 </html>

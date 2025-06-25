@@ -1,4 +1,4 @@
-// Production contact-popup.js - clean version without debug logging
+// EmailJS-powered contact-popup.js
 
 // Global functions for onclick handlers
 function openContactPopup() {
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
     contactOverlay.addEventListener('click', closeContactPopup);
   }
 
-  // Handle form submission
+  // NEW: EmailJS form submission handler
   if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
@@ -131,42 +131,36 @@ document.addEventListener('DOMContentLoaded', function() {
         submitButton.textContent = 'Sending...';
       }
       
-      // Check if this is a Formspree form (from your index.html)
-      if (this.action && this.action.includes('formspree.io')) {
-        // Use Formspree submission
-        const formData = new FormData(this);
-        fetch(this.action, {
-          method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
-        }).then(function(response) {
-          if (response.ok) {
-            if (successMessage) successMessage.style.display = 'block';
-            contactForm.reset();
-          } else {
-            throw new Error('Network response was not ok');
-          }
-        }).catch(function(error) {
+      // Prepare template parameters for EmailJS
+      const templateParams = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value
+      };
+      
+      // Send email using EmailJS
+      emailjs.send('service_98qpl0i', 'template_pxomllk', templateParams)
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          if (successMessage) successMessage.style.display = 'block';
+          contactForm.reset();
+          
+          // Auto-close popup after 3 seconds
+          setTimeout(function() {
+            closeContactPopup();
+          }, 3000);
+        })
+        .catch(function(error) {
+          console.log('FAILED...', error);
           if (errorMessage) errorMessage.style.display = 'block';
-        }).finally(function() {
+        })
+        .finally(function() {
           if (submitButton) {
             submitButton.disabled = false;
             submitButton.textContent = 'Send Message';
           }
         });
-      } else {
-        // Fallback - could add EmailJS here if needed
-        alert('Thank you for your message! We will get back to you soon.');
-        contactForm.reset();
-        closeContactPopup();
-        
-        if (submitButton) {
-          submitButton.disabled = false;
-          submitButton.textContent = 'Send Message';
-        }
-      }
     });
   }
 });
