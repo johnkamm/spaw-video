@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xcopy:*)",
+      "Bash(robocopy:*)",
+      "Bash(powershell -Command \"Copy-Item -Path . -Destination ..\\spaw-test -Recurse -Force\")",
+      "Bash(gh repo create:*)",
+      "Bash(move:*)",
+      "Bash(powershell -Command:*)",
+      "Bash(dir:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
