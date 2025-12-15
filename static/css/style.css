@@ -323,6 +323,87 @@ html, body {
   to { opacity: 0; }
 }
 
+/* Fractional Farm Announcement Section - Call to Action */
+.fractional-farm-section {
+  width: 100%;
+  background: linear-gradient(180deg, #000 0%, #1a1a1a 100%);
+  padding: 80px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.fractional-farm-content {
+  max-width: 1400px;
+  text-align: center;
+}
+
+.fractional-farm-main {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 30px 0;
+  line-height: 1.3;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.fractional-farm-main .find-out-link {
+  color: #4CAF50;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0 8px;
+  border-bottom: 3px solid #4CAF50;
+  font-weight: 700;
+}
+
+.fractional-farm-main .find-out-link:hover {
+  color: #66BB6A;
+  border-bottom-color: #66BB6A;
+  transform: translateY(-2px);
+}
+
+.fractional-farm-sub {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.5;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .fractional-farm-section {
+    padding: 50px 20px;
+  }
+
+  .fractional-farm-main {
+    font-size: 1.8rem;
+    margin: 0 0 20px 0;
+  }
+
+  .fractional-farm-sub {
+    font-size: 1.2rem;
+  }
+}
+
+/* Tablet responsive */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .fractional-farm-section {
+    padding: 60px 30px;
+  }
+
+  .fractional-farm-main {
+    font-size: 2.4rem;
+  }
+
+  .fractional-farm-sub {
+    font-size: 1.5rem;
+  }
+}
+
 /* Updated Cyrus Section with proper vertical alignment */
 .cyrus-section {
   width: 100%;
