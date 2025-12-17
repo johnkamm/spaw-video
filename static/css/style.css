@@ -356,6 +356,7 @@ html, body {
   padding: 0 8px;
   border-bottom: 3px solid #4CAF50;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .fractional-farm-main .find-out-link:hover {

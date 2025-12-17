@@ -9,7 +9,12 @@
       "Bash(powershell -Command:*)",
       "Bash(dir:*)",
       "Bash(git remote set-url:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(hugo version:*)",
+      "Bash(winget:*)",
+      "Bash(where.exe:*)",
+      "Bash(del \".\\nul\")",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []
