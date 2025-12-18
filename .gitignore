@@ -3,3 +3,8 @@ public/
 
 # Windows reserved device name
 nul
+
+.env
+env
+
+.github
