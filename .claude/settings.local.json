@@ -14,7 +14,9 @@
       "Bash(winget:*)",
       "Bash(where.exe:*)",
       "Bash(del \".\\nul\")",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git pull:*)",
+      "Bash(git checkout:*)"
     ],
     "deny": [],
     "ask": []
