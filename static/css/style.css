@@ -287,6 +287,16 @@ html, body {
   outline: none;
 }
 
+/* Honeypot field - hidden from users but visible to bots */
+.honeypot-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .submit-button {
   background-color: #000;
   color: white;

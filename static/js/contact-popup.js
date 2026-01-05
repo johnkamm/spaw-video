@@ -116,21 +116,29 @@ document.addEventListener('DOMContentLoaded', function() {
   if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      
+
       const submitButton = document.getElementById('submitButton');
       const successMessage = document.getElementById('successMessage');
       const errorMessage = document.getElementById('errorMessage');
-      
+
+      // Honeypot check - if filled, it's likely a bot
+      const honeypot = document.getElementById('website');
+      if (honeypot && honeypot.value !== '') {
+        console.log('Bot detected - honeypot field was filled');
+        // Silently reject the submission without showing an error
+        return false;
+      }
+
       // Hide previous messages
       if (successMessage) successMessage.style.display = 'none';
       if (errorMessage) errorMessage.style.display = 'none';
-      
+
       // Disable submit button
       if (submitButton) {
         submitButton.disabled = true;
         submitButton.textContent = 'Sending...';
       }
-      
+
       // Prepare template parameters for EmailJS
       const templateParams = {
         name: document.getElementById('name').value,

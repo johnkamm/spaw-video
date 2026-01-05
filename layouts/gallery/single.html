@@ -57,6 +57,13 @@
         <label for="message">Message</label>
         <textarea id="message" name="message" rows="5" required></textarea>
       </div>
+
+      <!-- Honeypot field for bot detection -->
+      <div class="form-group honeypot-field" aria-hidden="true">
+        <label for="website">Website</label>
+        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+      </div>
+
       <button type="submit" class="submit-button" id="submitButton">Send Message</button>
     </form>
   </div>
