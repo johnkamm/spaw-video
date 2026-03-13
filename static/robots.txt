@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://spstrat.com/sitemap.xml
